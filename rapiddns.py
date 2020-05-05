@@ -6,11 +6,11 @@
 # Firefox driver = "https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz"
 # Chrome and Chromium driver = "https://chromedriver.storage.googleapis.com/81.0.4044.69/chromedriver_linux64.zip"
 
+# Usage: python3 rapiddns.py target.com
+
 import sys, os, threading, shutil, time
 import pandas as pd
 from selenium import webdriver
-from selenium.webdriver.firefox.options import Options
-from selenium.webdriver.chrome.options import Options
 
 
 url = "https://rapiddns.io/subdomain/{}".format(sys.argv[1])
@@ -41,7 +41,7 @@ def main():
 
 def firefox():
 
-    options = Options()
+    options = webdriver.firefox.options.Options()
     options.headless = True
 
     profile = webdriver.FirefoxProfile() 
@@ -62,7 +62,7 @@ def firefox():
 
 def chrome():
 
-    options = Options()
+    options = webdriver.chrome.options.Options()
     options.add_argument("download.default_directory={}".format(os.getcwd()))
     options.add_argument("--headless")  
 
