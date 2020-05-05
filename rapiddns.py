@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-# Author: github.com/spenkk
+# Author: twitter.com/spenkkkkk
 # Tested on Linux
 # Please download the driver you need and add it to your path 'e.x. ln -s /root/tools/geckodriver /usr/local/bin/geckodriver' or specify it in webdriver.Browser()
 # Firefox driver = "https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz"
