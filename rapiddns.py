@@ -53,7 +53,8 @@ def firefox():
     driver = webdriver.Firefox(firefox_profile=profile, options=options)
     driver.get(url)
 
-    def gfg(): 
+    def gfg():
+        print("Downloading csv file")
         driver.execute_script('exportData()')
       
     timer = threading.Timer(10.0, gfg) 
@@ -66,8 +67,9 @@ def chrome():
     options.add_argument("download.default_directory={}".format(os.getcwd()))
     options.add_argument("--headless")  
 
-    driver = webdriver.Chrome(chrome_options=options)
+    driver = webdriver.Chrome(options=options)
     driver.get(url)
+    print("Downloading csv file")
     driver.find_element_by_xpath('//button[text()="Export CSV"]').click()
 
 
@@ -78,7 +80,8 @@ def onlyDomains():
 
     while not os.path.exists(file_path):
         time.sleep(1)
-
+        
+    print("Sorting csv file and saving output to subdomains.txt")
     if os.path.isfile(file_path):
         df = pd.read_csv("{}.csv".format(sys.argv[1]))
         saved_column = df['Domain']
