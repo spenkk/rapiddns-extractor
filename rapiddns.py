@@ -21,7 +21,7 @@ def onlyDomains():
 
 		print(Fore.RED + '[*] Sorting and removing duplicates.' + Style.RESET_ALL)
 		lines_seen = set()
-		outfile = open('domains.txt', 'w')
+		outfile = open('subdomains.txt', 'w')
 		for line in open('domains-temp.txt', 'r'):
 			if line not in lines_seen:
 				outfile.write(line)
