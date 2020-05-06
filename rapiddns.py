@@ -24,6 +24,7 @@ def onlyDomains():
 		outfile = open('subdomains.txt', 'w')
 		for line in open('domains-temp.txt', 'r'):
 			if line not in lines_seen:
+				if not line.strip(): continue
 				outfile.write(line)
 				lines_seen.add(line)
 		outfile.close()
