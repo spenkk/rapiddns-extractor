@@ -14,12 +14,11 @@ def onlyDomains():
 		for i in lines:
 			url = i.split(",")[0]
 			domain = url.split("//")[-1].split("/")[0]
-			# print(Fore.GREEN + domain + Style.RESET_ALL)
 			
 			with open ('domains-temp.txt', 'a') as temp:
 					temp.write(domain + '\n')
 
-		print(Fore.RED + '[*] Sorting and removing duplicates.' + Style.RESET_ALL)
+		# Sorting and removing duplicates
 		lines_seen = set()
 		outfile = open('subdomains.txt', 'w')
 		for line in open('domains-temp.txt', 'r'):
@@ -27,13 +26,13 @@ def onlyDomains():
 				if not line.strip(): continue
 				outfile.write(line)
 				lines_seen.add(line)
+				print(Fore.GREEN + '' + line.rstrip() + '' + Style.RESET_ALL)
 		outfile.close()
 		os.remove('domains-temp.txt')
 
 def withDescription():
 	for website_name in website_table_items:
 		web = website_name.contents[-1].strip()
-		print(website_name['href'], Fore.GREEN + '"' + web + '"' + Style.RESET_ALL)
 		urls = website_name['href'] + ', "' + web + '"' 
 		with open('all.txt', 'a') as out:
 			out.write(urls + '\n')
