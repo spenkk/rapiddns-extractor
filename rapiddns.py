@@ -2,6 +2,9 @@ import os, requests, sys, csv, colorama
 from colorama import Fore, Style
 from bs4 import BeautifulSoup
 
+if len(sys.argv)<2:
+	print("Usage: python " + sys.argv[0] + " target.com")
+	sys.exit(1)
 
 def onlysubdomains():
 	with open("all.txt") as lines:
