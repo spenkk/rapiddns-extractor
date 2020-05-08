@@ -1,10 +1,4 @@
-import re
-import os
-import string
-import sys
-import requests
-import csv
-import colorama
+import os, requests, sys, csv, colorama
 from colorama import Fore, Style
 from bs4 import BeautifulSoup
 
