@@ -9,7 +9,7 @@ from colorama import Fore, Style
 from bs4 import BeautifulSoup
 
 
-def onlyDomains():
+def onlysubdomains():
 	with open("all.txt") as lines:
 		for i in lines:
 			url = i.split(",")[0]
@@ -52,4 +52,4 @@ website_table_items = website_table.find_all('a', href=True)
 if __name__ == "__main__":
 	
 	withDescription()
-	onlyDomains()
+	onlysubdomains()
