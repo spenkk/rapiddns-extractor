@@ -4,11 +4,8 @@ Extract subdomains from rapiddns.io
 
 ### Usage
 ```bash
-~ python3 rapiddns.io target.com
+~ python3 rapiddns.py target.com
 ~ ls
 
-all.txt subdomains.txt
+target-rapiddns.out
 ```
-
-### Note
-Since a lot of people were having problem with rapiddns-old.py beacuse of Selenium. I made another version in BeautifulSoup.
